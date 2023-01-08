@@ -1,0 +1,65 @@
+
+//Papaefthymiou Kosmas
+class Vehicle {   
+  int passengers; // number of passengers   
+  int fuelcap;    // fuel capacity in liters 
+  int kpl;        // fuel consumption in kilometers per litter  
+  
+  // Add a constructor of the class that initializes the all of the above variables
+  Vehicle()
+  {
+      passengers=0;
+      fuelcap=0;
+      kpl=0;
+  }
+ 
+ Vehicle(int passengers,int fuelcap,int kpl)
+ {
+     this.passengers=passengers;
+     this.fuelcap=fuelcap;
+     this.kpl=kpl;
+ }
+  public int range() {  
+
+    int range;
+   return range=fuelcap/kpl;
+
+  }  
+  
+
+  
+  public double fuelneeded(int km) {  
+    
+   return  km=(int)(double)(fuelcap/kpl);
+
+  }  
+
+}   
+   
+
+
+public class VehicleDemo {   
+  public static void main(String args[]) {   
+ 
+    // We construct a minivan vehicle with 7 passengers, 16 liters of fuel capacity and 21 klp. 
+    Vehicle minivan = new Vehicle(7, 16, 21); 
+
+    // We construct a sportscar vehicle with 2 passengers, 14 liters of fuel capacity and 12 klp.  
+    Vehicle sportscar = new Vehicle(2, 14, 12); 
+  
+    double liters;  
+    int dist = 252;  
+  
+    liters = minivan.fuelneeded(dist);   
+   
+    System.out.println("To go " + dist + " km minivan needs " +  
+                       liters + " liters of fuel.");  
+      
+    liters = sportscar.fuelneeded(dist);   
+   
+    System.out.println("To go " + dist + " liters sportscar needs " +  
+                       liters + " liters of fuel.");  
+      
+  }   
+}
+
